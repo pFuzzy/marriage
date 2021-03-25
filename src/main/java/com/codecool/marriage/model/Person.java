@@ -3,12 +3,13 @@ package com.codecool.marriage.model;
 public class Person {
 
     private String name;
-    private boolean gender;
+    private boolean isMale;
     private int age;
+    private boolean isMarried;
 
-    public Person(String name, boolean gender, int age) {
+    public Person(String name, boolean isMale, int age) {
         this.name = name;
-        this.gender = gender;
+        this.isMale = isMale;
         this.age = age;
     }
 
@@ -17,7 +18,7 @@ public class Person {
     }
 
     public boolean isMale() {
-        return gender;
+        return isMale;
     }
 
     public int getAge() {
@@ -29,7 +30,7 @@ public class Person {
     }
 
     public void setGender(boolean gender) {
-        this.gender = gender;
+        this.isMale = gender;
     }
 
     public void setAge(int age) {

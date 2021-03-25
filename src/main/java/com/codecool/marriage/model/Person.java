@@ -9,7 +9,7 @@ public class Person {
     private String name;
     private boolean isMale;
     private int age;
-    private boolean isMarried;
+    private boolean isMarried = false;
 
     public Person(String name, boolean isMale, int age) {
         this.name = name;

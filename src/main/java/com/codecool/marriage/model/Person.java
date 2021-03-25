@@ -36,4 +36,12 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public boolean isMarried() {
+        return isMarried;
+    }
+
+    public void setMarried(boolean married) {
+        isMarried = married;
+    }
 }

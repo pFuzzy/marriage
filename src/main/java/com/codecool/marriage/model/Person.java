@@ -1,5 +1,9 @@
 package com.codecool.marriage.model;
 
+import com.codecool.marriage.exception.AlreadyMarriedException;
+import com.codecool.marriage.exception.SameGenderException;
+import com.codecool.marriage.exception.UnderAgeException;
+
 public class Person {
 
     private String name;
@@ -11,6 +15,21 @@ public class Person {
         this.name = name;
         this.isMale = isMale;
         this.age = age;
+    }
+
+    public boolean marry(Person personToMarry) throws SameGenderException, UnderAgeException, AlreadyMarriedException {
+        if((isMale() && personToMarry.isMale()) || (!isMale() && !personToMarry.isMale())){
+            throw new SameGenderException("Same gender marriage is not allowed!");
+        }
+        if(getAge() < 18 || personToMarry.getAge() < 18){
+            throw new UnderAgeException("Underage marriage is not allowed!");
+        }
+        if(isMarried() || personToMarry.isMarried()){
+            throw new AlreadyMarriedException("Already married!");
+        }
+        setMarried(true);
+        personToMarry.setMarried(true);
+        return true;
     }
 
     public String getName() {

@@ -10,6 +10,7 @@ public class Person {
     private boolean isMale;
     private int age;
     private boolean isMarried = false;
+    private final int ageOfConsent = 18;
 
     public Person(String name, boolean isMale, int age) {
         this.name = name;
@@ -21,7 +22,7 @@ public class Person {
         if((isMale() && personToMarry.isMale()) || (!isMale() && !personToMarry.isMale())){
             throw new SameGenderException("Same gender marriage is not allowed!");
         }
-        if(getAge() < 18 || personToMarry.getAge() < 18){
+        if(getAge() < ageOfConsent || personToMarry.getAge() < ageOfConsent){
             throw new UnderAgeException("Underage marriage is not allowed!");
         }
         if(isMarried() || personToMarry.isMarried()){
